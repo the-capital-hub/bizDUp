@@ -10,6 +10,14 @@ import Meetings from "./page/Startup/Meetings/Meetings";
 import Chats from "./page/Startup/Chats/Chats";
 import Support from "./page/Startup/Support/Support";
 
+// Startup Management
+import Lead from "./page/StartupManagement/Leads/Leads";
+import Explore from "./page/StartupManagement/Explore/Explore";
+import TaskManagement from "./page/StartupManagement/TaskManagement/TaskManagement";
+import Contracts from "./page/StartupManagement/Contracts/Contract";
+import StartupManagement from "./page/StartupManagement/StartupManagement/StartupManagement";
+import FormBuilder from "./page/StartupManagement/FormBuilder/FormBuilder";
+
 const App = () => {
 	return (
 		<Router>
@@ -21,10 +29,21 @@ const App = () => {
 
 				<Route element={<Layout />}>
 					<Route path="/" element={<Dashboard />} />
-					{/* <Route path="/startup/dashboard" element={<Dashboard />} /> */}
+					<Route path="/startup/dashboard" element={<Dashboard />} />
 					<Route path="/startup/meetings" element={<Meetings />} />
 					<Route path="/startup/chats" element={<Chats />} />
 					<Route path="/startup/support" element={<Support />} />
+
+					{/* Startup Management */}
+					<Route path="/startup/lead" element={<Lead />} />
+					<Route path="/startup/explore" element={<Explore />} />
+					<Route path="/startup/task-management" element={<TaskManagement />} />
+					<Route path="/startup/contracts" element={<Contracts />} />
+					<Route
+						path="/startup/startup-management"
+						element={<StartupManagement />}
+					/>
+					<Route path="/startup/form-builder" element={<FormBuilder />} />
 				</Route>
 			</Routes>
 		</Router>
