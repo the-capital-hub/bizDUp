@@ -3,8 +3,8 @@ import AuthPage from "./page/AuthPage/AuthPage";
 import FundraisingFlow from "./page/Fundraising/Fundraising";
 import ApplicationFlow from "./page/ApplicationFlow/ApplicationFlow";
 
-import Layout from "./components/Layout/Startup/Layout";
 // Startup
+import Layout from "./components/Layout/Startup/Layout";
 import Dashboard from "./page/Startup/Dashboard/Dashboard";
 import Meetings from "./page/Startup/Meetings/Meetings";
 import Chats from "./page/Startup/Chats/Chats";
@@ -17,6 +17,10 @@ import TaskManagement from "./page/StartupManagement/TaskManagement/TaskManageme
 import Contracts from "./page/StartupManagement/Contracts/Contract";
 import StartupManagement from "./page/StartupManagement/StartupManagement/StartupManagement";
 import FormBuilder from "./page/StartupManagement/FormBuilder/FormBuilder";
+
+// Investor
+import LayoutInvestor from "./components/Layout/Investor/Layout";
+import Advice from "./page/Investor/Advice/Advice";
 
 // Investor Onboarding
 import InvestorOnboarding from "./page/InvestorOnboarding/InvestorOnboarding";
@@ -49,7 +53,15 @@ const App = () => {
 					<Route path="/startup/form-builder" element={<FormBuilder />} />
 				</Route>
 
+				{/* Investor */}
 				<Route path="/investor-onboarding" element={<InvestorOnboarding />} />
+				<Route element={<LayoutInvestor />}>
+					<Route path="investor/dashboard" element={<Advice />} />
+					<Route path="investor/explore" element={<Explore />} />
+					<Route path="investor/portfolio" element={<Advice />} />
+					<Route path="investor/meetings" element={<Meetings />} />
+					<Route path="investor/advice" element={<Advice />} />
+				</Route>
 			</Routes>
 		</Router>
 	);
