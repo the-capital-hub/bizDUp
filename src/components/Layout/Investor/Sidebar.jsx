@@ -3,14 +3,10 @@ import { useState } from "react";
 
 import { FiPieChart } from "react-icons/fi";
 import { IoCalendarOutline } from "react-icons/io5";
-import { PiChatsCircleLight } from "react-icons/pi";
-import { MdOutlineSupportAgent } from "react-icons/md";
 import { RiShare2Line } from "react-icons/ri";
-import { LuUserPen } from "react-icons/lu";
-import { IoRocketOutline } from "react-icons/io5";
-import { BiTask } from "react-icons/bi";
-import { TbContract } from "react-icons/tb";
-import { FaWpforms } from "react-icons/fa";
+import { IoSearch } from "react-icons/io5";
+import { CiWavePulse1 } from "react-icons/ci";
+import { LiaCommentSolid } from "react-icons/lia";
 import BizDateUpLogo from "../../../Images/BizDateUp_Logo.png";
 import LogoutPopup from "../../Popup/LogoutPopup";
 
@@ -18,70 +14,27 @@ const items = [
 	{
 		title: "Dashboard",
 		icon: FiPieChart,
-		href: "/startup/dashboard",
+		href: "/investor/dashboard",
+	},
+	{
+		title: "Explore",
+		icon: IoSearch,
+		href: "/investor/explore",
+	},
+	{
+		title: "Portfolio",
+		icon: CiWavePulse1,
+		href: "/investor/portfolio",
 	},
 	{
 		title: "Meetings",
 		icon: IoCalendarOutline,
-		href: "/startup/meetings",
+		href: "/investor/meetings",
 	},
 	{
-		title: "Chats",
-		icon: PiChatsCircleLight,
-		href: "/startup/chats",
-	},
-	{
-		title: "Support",
-		icon: MdOutlineSupportAgent,
-		href: "/startup/support",
-	},
-];
-
-const items2 = [
-	{
-		title: "Dashboard",
-		icon: FiPieChart,
-		href: "/startup/dashboard",
-	},
-	{
-		title: "Lead",
-		icon: LuUserPen,
-		href: "/startup/lead",
-	},
-	{
-		title: "Explore",
-		icon: IoRocketOutline,
-		href: "/startup/explore",
-	},
-	{
-		title: "Task Management",
-		icon: BiTask,
-		href: "/startup/task-management",
-	},
-	{
-		title: "Meetings",
-		icon: RiShare2Line,
-		href: "/startup/meetings",
-	},
-	{
-		title: "Contracts",
-		icon: TbContract,
-		href: "/startup/contracts",
-	},
-	{
-		title: "Startup Management",
-		icon: RiShare2Line,
-		href: "/startup/startup-management",
-	},
-	{
-		title: "Form Builder",
-		icon: FaWpforms,
-		href: "/startup/form-builder",
-	},
-	{
-		title: "Support",
-		icon: MdOutlineSupportAgent,
-		href: "/startup/support",
+		title: "Advice",
+		icon: LiaCommentSolid,
+		href: "/investor/advice",
 	},
 ];
 
@@ -98,7 +51,7 @@ const Sidebar = ({ isCollapsed }) => {
 
 					<div className="flex flex-col gap-1">
 						<div className="flex flex-col justify-center items-center gap-1">
-							{items2.map((item, index) => (
+							{items.map((item, index) => (
 								<div
 									key={index}
 									className={`
