@@ -18,6 +18,9 @@ import Contracts from "./page/StartupManagement/Contracts/Contract";
 import StartupManagement from "./page/StartupManagement/StartupManagement/StartupManagement";
 import FormBuilder from "./page/StartupManagement/FormBuilder/FormBuilder";
 
+// Investor Onboarding
+import InvestorOnboarding from "./page/InvestorOnboarding/InvestorOnboarding";
+
 const App = () => {
 	return (
 		<Router>
@@ -25,7 +28,7 @@ const App = () => {
 				{/* <Route path="/test" element={<Dashboard />} /> */}
 				<Route path="/auth" element={<AuthPage mode="signup" />} />
 				<Route path="/foundraising" element={<FundraisingFlow />} />
-				<Route path="/onboarding-startup" element={<ApplicationFlow />} />
+				<Route path="/startup-onboarding" element={<ApplicationFlow />} />
 
 				<Route element={<Layout />}>
 					<Route path="/" element={<Dashboard />} />
@@ -45,6 +48,8 @@ const App = () => {
 					/>
 					<Route path="/startup/form-builder" element={<FormBuilder />} />
 				</Route>
+
+				<Route path="/investor-onboarding" element={<InvestorOnboarding />} />
 			</Routes>
 		</Router>
 	);
