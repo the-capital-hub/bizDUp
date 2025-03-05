@@ -1,10 +1,10 @@
 import { useState } from "react";
-import BizDateUpLogo from "../../Images/BizDateUp_Logo.png";
-import FounderDetails from "../../components/OnboardingForm/FounderDetails";
-import FundRequired from "../../components/OnboardingForm/FundsRequired";
-import StartupDetails from "../../components/OnboardingForm/StartupDetails";
-import Background_img_1 from "../../Images/Background_img_1.png";
-import Background_img_2 from "../../Images/Background_img_2.png";
+import BizDateUpLogo from "../../../Images/BizDateUp_Logo.png";
+import FounderDetails from "../../../components/OnboardingForm/FounderDetails";
+import FundRequired from "../../../components/OnboardingForm/FundsRequired";
+import StartupDetails from "../../../components/OnboardingForm/StartupDetails";
+import Background_img_1 from "../../../Images/Background_img_1.png";
+import Background_img_2 from "../../../Images/Background_img_2.png";
 
 const ApplicationFlow = () => {
 	const [currentStep, setCurrentStep] = useState(1);

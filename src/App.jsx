@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AuthPage from "./page/AuthPage/AuthPage";
-import FundraisingFlow from "./page/Fundraising/Fundraising";
-import ApplicationFlow from "./page/ApplicationFlow/ApplicationFlow";
+import FundraisingFlow from "./page/Startup/Fundraising/Fundraising";
+import ApplicationFlow from "./page/Startup/ApplicationFlow/ApplicationFlow";
+import Layout from "./components/Layout/Layout";
 
 // Startup
-import Layout from "./components/Layout/Startup/Layout";
 import Dashboard from "./page/Startup/Dashboard/Dashboard";
 import Meetings from "./page/Startup/Meetings/Meetings";
 import Chats from "./page/Startup/Chats/Chats";
@@ -19,11 +19,16 @@ import StartupManagement from "./page/StartupManagement/StartupManagement/Startu
 import FormBuilder from "./page/StartupManagement/FormBuilder/FormBuilder";
 
 // Investor
-import LayoutInvestor from "./components/Layout/Investor/Layout";
 import Advice from "./page/Investor/Advice/Advice";
+import Portfolio from "./page/Investor/Portfolio/Portfolio";
 
 // Investor Onboarding
-import InvestorOnboarding from "./page/InvestorOnboarding/InvestorOnboarding";
+import InvestorOnboarding from "./page/Investor/InvestorOnboarding/InvestorOnboarding";
+
+// Syndicate
+import Invite from "./page/Syndicate/Invite.jsx";
+import Investors from "./page/Syndicate/Investors.jsx";
+import Community from "./page/Syndicate/Community.jsx";
 
 const App = () => {
 	return (
@@ -33,8 +38,10 @@ const App = () => {
 				<Route path="/auth" element={<AuthPage mode="signup" />} />
 				<Route path="/foundraising" element={<FundraisingFlow />} />
 				<Route path="/startup-onboarding" element={<ApplicationFlow />} />
+				<Route path="/investor-onboarding" element={<InvestorOnboarding />} />
 
 				<Route element={<Layout />}>
+					{/* startup */}
 					<Route path="/" element={<Dashboard />} />
 					<Route path="/startup/dashboard" element={<Dashboard />} />
 					<Route path="/startup/meetings" element={<Meetings />} />
@@ -42,25 +49,62 @@ const App = () => {
 					<Route path="/startup/support" element={<Support />} />
 
 					{/* Startup Management */}
-					<Route path="/startup/lead" element={<Lead />} />
-					<Route path="/startup/explore" element={<Explore />} />
-					<Route path="/startup/task-management" element={<TaskManagement />} />
-					<Route path="/startup/contracts" element={<Contracts />} />
+					<Route path="/startup-manager/dashboard" element={<Dashboard />} />
+					<Route path="/startup-manager/lead" element={<Lead />} />
+					<Route path="/startup-manager/explore" element={<Explore />} />
 					<Route
-						path="/startup/startup-management"
+						path="/startup-manager/task-management"
+						element={<TaskManagement />}
+					/>
+					<Route path="/startup-manager/meetings" element={<Meetings />} />
+					<Route path="/startup-manager/contracts" element={<Contracts />} />
+					<Route
+						path="/startup-manager/startup-management"
 						element={<StartupManagement />}
 					/>
-					<Route path="/startup/form-builder" element={<FormBuilder />} />
-				</Route>
+					<Route
+						path="/startup-manager/form-builder"
+						element={<FormBuilder />}
+					/>
+					<Route path="/startup-manager/support" element={<Support />} />
 
-				{/* Investor */}
-				<Route path="/investor-onboarding" element={<InvestorOnboarding />} />
-				<Route element={<LayoutInvestor />}>
-					<Route path="investor/dashboard" element={<Advice />} />
+					{/* Investor */}
+					<Route path="investor/dashboard" element={<div>Dashboard</div>} />
 					<Route path="investor/explore" element={<Explore />} />
-					<Route path="investor/portfolio" element={<Advice />} />
-					<Route path="investor/meetings" element={<Meetings />} />
+					<Route path="investor/portfolio" element={<Portfolio />} />
 					<Route path="investor/advice" element={<Advice />} />
+					<Route path="investor/meetings" element={<Meetings />} />
+
+					{/* Investor Management */}
+					<Route
+						path="investor-manager/dashboard"
+						element={<div>Dashboard</div>}
+					/>
+					<Route path="investor-manager/leads" element={<Lead />} />
+					<Route path="investor-manager/investors" element={<Investors />} />
+					<Route
+						path="/investor-manager/task-management"
+						element={<TaskManagement />}
+					/>
+					<Route path="investor-manager/meetings" element={<Meetings />} />
+					<Route path="/investor-manager/contracts" element={<Contracts />} />
+					<Route
+						path="/investor-manager/form-builder"
+						element={<FormBuilder />}
+					/>
+					<Route path="/investor-manager/support" element={<Support />} />
+
+					{/* Syndicate */}
+					<Route path="syndicate/dashboard" element={<div>Dashboard</div>} />
+					<Route path="syndicate/investors" element={<Investors />} />
+					<Route
+						path="/syndicate/task-management"
+						element={<TaskManagement />}
+					/>
+					<Route path="syndicate/meetings" element={<Meetings />} />
+					<Route path="syndicate/community" element={<Community />} />
+					<Route path="syndicate/invite-link" element={<Invite />} />
+					<Route path="syndicate/support" element={<Support />} />
 				</Route>
 			</Routes>
 		</Router>

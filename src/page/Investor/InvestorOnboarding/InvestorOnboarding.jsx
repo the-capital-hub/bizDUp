@@ -1,16 +1,16 @@
 import { useState } from "react";
-import BizDateUpLogo from "../../Images/BizDateUp_Logo.png";
-import Background_img_1 from "../../Images/Background_img_1.png";
-import Background_img_2 from "../../Images/Background_img_2.png";
-import InvestorType from "../../components/InvestorOnboarding/TypeOfInvestor/InvestorType";
-import IndividualInvestor from "../../components/InvestorOnboarding/IndividualInvestor/IndividualInvestor";
-import HUFInvestor from "../../components/InvestorOnboarding/HUFInvestor/HUFInvestor";
-import CorporateInvestor from "../../components/InvestorOnboarding/CorporateInvestor/CorporateInvestor";
-import UserProfile from "../../components/InvestorOnboarding/BasicDetails/UserProfile";
-import KYCProcess from "../../components/InvestorOnboarding/KYCProcess/KYCProcess";
-import Verification from "../../components/InvestorOnboarding/Verification/Verification";
-import InvestorProfileSetup from "../../components/InvestorOnboarding/InvestorProfileSetup/InvestorProfileSetup";
-import VerificationPopup from "../../components/Popup/verificatinPopup";
+import BizDateUpLogo from "../../../Images/BizDateUp_Logo.png";
+import Background_img_1 from "../../../Images/Background_img_1.png";
+import Background_img_2 from "../../../Images/Background_img_2.png";
+import InvestorType from "../../../components/InvestorOnboarding/TypeOfInvestor/InvestorType";
+import IndividualInvestor from "../../../components/InvestorOnboarding/IndividualInvestor/IndividualInvestor";
+import HUFInvestor from "../../../components/InvestorOnboarding/HUFInvestor/HUFInvestor";
+import CorporateInvestor from "../../../components/InvestorOnboarding/CorporateInvestor/CorporateInvestor";
+import UserProfile from "../../../components/InvestorOnboarding/BasicDetails/UserProfile";
+import KYCProcess from "../../../components/InvestorOnboarding/KYCProcess/KYCProcess";
+import Verification from "../../../components/InvestorOnboarding/Verification/Verification";
+import InvestorProfileSetup from "../../../components/InvestorOnboarding/InvestorProfileSetup/InvestorProfileSetup";
+import VerificationPopup from "../../../components/Popup/verificatinPopup";
 
 const InvestorOnboarding = () => {
 	const [investorType, setInvestorType] = useState("individual");

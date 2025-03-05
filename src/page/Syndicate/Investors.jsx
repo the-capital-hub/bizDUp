@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Plus } from "lucide-react";
-import AddNewLead from "../../../components/Popup/AddLeadPopup";
+import AddInvestorPopup from "../../components/Popup/AddInvestorPopup";
 
 // Dummy data for leads
 const INITIAL_LEADS = [
@@ -75,7 +75,7 @@ const STATUS_COLORS = {
 	"On Going": "bg-yellow-100 text-yellow-800",
 };
 
-export default function LeadManagement() {
+export default function Investors() {
 	const [leads, setLeads] = useState(INITIAL_LEADS);
 	const [showAddLead, setShowAddLead] = useState(false);
 
@@ -87,12 +87,12 @@ export default function LeadManagement() {
 	return (
 		<div className="p-6">
 			<div className="flex justify-between items-center mb-6">
-				<h1 className="text-2xl font-bold">Lead Management</h1>
+				<h1 className="text-2xl font-bold">Investors</h1>
 				<Button
 					onClick={() => setShowAddLead(true)}
 					className="bg-blue-600 hover:bg-blue-700"
 				>
-					<Plus className="w-4 h-4 mr-2" /> New Lead
+					<Plus className="w-4 h-4 mr-2" /> New Investor
 				</Button>
 			</div>
 
@@ -167,11 +167,7 @@ export default function LeadManagement() {
 				))}
 			</div>
 
-			<AddNewLead
-				open={showAddLead}
-				onOpenChange={setShowAddLead}
-				onSubmit={handleAddLead}
-			/>
+			<AddInvestorPopup open={showAddLead} onOpenChange={setShowAddLead} />
 		</div>
 	);
 }
