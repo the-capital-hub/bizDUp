@@ -9,7 +9,7 @@ const Sidebar = ({ isCollapsed }) => {
 	const location = useLocation();
 	const [showLogoutAlert, setShowLogoutAlert] = useState(false);
 
-	const menu = SidebarMenus("investor"); // choose from startup, investor, startup_manager, investor_manager, syndicate
+	const menu = SidebarMenus("investor_manager"); // choose from startup, investor, startup_manager, investor_manager, syndicate
 	return (
 		<>
 			<div className={`bg-white ${isCollapsed ? "w-16" : "w-64"} p-6 relative`}>
