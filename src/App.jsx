@@ -4,6 +4,9 @@ import FundraisingFlow from "./page/Startup/Fundraising/Fundraising";
 import ApplicationFlow from "./page/Startup/ApplicationFlow/ApplicationFlow";
 import Layout from "./components/Layout/Layout";
 
+// Test
+import Test from "./components/Test.jsx";
+
 // Startup
 import Dashboard from "./page/Startup/Dashboard/Dashboard";
 import Meetings from "./page/Startup/Meetings/Meetings";
@@ -38,7 +41,7 @@ const App = () => {
 	return (
 		<Router>
 			<Routes>
-				{/* <Route path="/test" element={<Dashboard />} /> */}
+				<Route path="/" element={<Test />} />
 				<Route path="/auth" element={<AuthPage mode="signup" />} />
 				<Route path="/foundraising" element={<FundraisingFlow />} />
 				<Route path="/startup-onboarding" element={<ApplicationFlow />} />
@@ -46,7 +49,6 @@ const App = () => {
 
 				<Route element={<Layout />}>
 					{/* startup */}
-					<Route path="/" element={<Dashboard />} />
 					<Route path="/startup/dashboard" element={<Dashboard />} />
 					<Route path="/startup/meetings" element={<Meetings />} />
 					<Route path="/startup/chats" element={<Chats />} />
