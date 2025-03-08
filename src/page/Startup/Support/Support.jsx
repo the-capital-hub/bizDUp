@@ -10,7 +10,10 @@ import {
 	DrawerHeader,
 	DrawerTitle,
 } from "@/components/ui/drawer";
-import { Mail, HelpCircle, MessageCircle, Plus, Minus } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
+import Contactus_Icon from "../../../Images/Contactus_Icon.png";
+import Mailus_Icon from "../../../Images/Email_Icon.png";
+import GetHelp_Icon from "../../../Images/Help_Icon.png";
 
 // Dummy questions data
 const QUESTIONS = [
@@ -128,37 +131,43 @@ export default function Support() {
 			</div>
 
 			{/* Support Options */}
-			<div className="grid grid-cols-3 gap-4">
+			<div className="flex gap-4 justify-center items-center">
 				<Button
 					variant="outline"
-					className="flex flex-col items-center gap-2 p-6 h-auto"
+					className="flex flex-col items-center gap-2 p-6 h-[150px] w-[170px]"
 					onClick={() => (window.location.href = "mailto:support@example.com")}
 				>
-					<div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-						<MessageCircle className="w-6 h-6 text-orange-500" />
-					</div>
+					<img
+						src={Contactus_Icon}
+						alt="Contactus Icon"
+						className="w-[90px] h-auto"
+					/>
 					<span className="font-medium">Contact us</span>
 				</Button>
 
 				<Button
 					variant="outline"
-					className="flex flex-col items-center gap-2 p-6 h-auto"
+					className="flex flex-col items-center gap-2 p-6 h-[150px] w-[170px]"
 					onClick={() => (window.location.href = "mailto:info@example.com")}
 				>
-					<div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-						<Mail className="w-6 h-6 text-blue-500" />
-					</div>
+					<img
+						src={Mailus_Icon}
+						alt="Mailus Icon"
+						className="w-[90px] h-auto"
+					/>
 					<span className="font-medium">Mail us</span>
 				</Button>
 
 				<Button
 					variant="outline"
-					className="flex flex-col items-center gap-2 p-6 h-auto"
+					className="flex flex-col items-center gap-2 p-6 h-[150px] w-[170px]"
 					onClick={() => window.open("/help", "_blank")}
 				>
-					<div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-						<HelpCircle className="w-6 h-6 text-purple-500" />
-					</div>
+					<img
+						src={GetHelp_Icon}
+						alt="GetHelp Icon"
+						className="w-[90px] h-auto"
+					/>
 					<span className="font-medium">Get Help</span>
 				</Button>
 			</div>

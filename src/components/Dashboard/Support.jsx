@@ -19,7 +19,7 @@ export default function SupportSection() {
 	const [openFaq, setOpenFaq] = useState(1);
 
 	return (
-		<div className="bg-white rounded-xl p-6">
+		<div className="bg-white p-6 rounded-xl border bg-card text-card-foreground shadow">
 			<h2 className="text-xl font-semibold mb-6">Support</h2>
 
 			<div className="relative mb-8">
