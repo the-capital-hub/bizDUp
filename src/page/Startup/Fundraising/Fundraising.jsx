@@ -1,12 +1,12 @@
 import { useState } from "react";
-import ApplicationForm from "../../components/Fundraising/FundraisingApplication";
-import ApplicationSubmitted from "../../components/Fundraising/ApplicationSubmitted";
-import UnderReview from "../../components/Fundraising/ApplicationUnderReview";
-import Selected from "../../components/Fundraising/ApplicationSelected";
-import ProgressTracker from "../../components/Fundraising/ProgressTracker";
-import BizDateUpLogo from "../../Images/BizDateUp_Logo.png";
-import Background_img_1 from "../../Images/Background_img_1.png";
-import Background_img_2 from "../../Images/Background_img_2.png";
+import ApplicationForm from "../../../components/Fundraising/FundraisingApplication";
+import ApplicationSubmitted from "../../../components/Fundraising/ApplicationSubmitted";
+import UnderReview from "../../../components/Fundraising/ApplicationUnderReview";
+import Selected from "../../../components/Fundraising/ApplicationSelected";
+import ProgressTracker from "../../../components/Fundraising/ProgressTracker";
+import BizDateUpLogo from "../../../Images/BizDateUp_Logo.png";
+import Background_img_1 from "../../../Images/Background_img_1.png";
+import Background_img_2 from "../../../Images/Background_img_2.png";
 
 export default function FundraisingApp() {
 	const [currentStep, setCurrentStep] = useState(1);

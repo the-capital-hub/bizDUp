@@ -11,9 +11,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Bell } from "lucide-react";
 import { LuUsers } from "react-icons/lu";
-import Avtar from "../../../Images/Avatar.png";
-import Search from "./Components/Search";
-import LogoutPopup from "../../../components/Popup/LogoutPopup";
+import Avtar from "../../Images/Avatar.png";
+import Search from "../Search";
+import LogoutPopup from "../Popup/LogoutPopup";
 
 const Navbar = ({ isCollapsed, setIsCollapsed }) => {
 	const [showLogoutAlert, setShowLogoutAlert] = useState(false);
