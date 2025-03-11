@@ -6,6 +6,7 @@ import Layout from "./components/Layout/Layout";
 
 // Test
 import Test from "./components/Test.jsx";
+import UserOnboarding from "./page/UserOnboarding/UserOnboarding.jsx";
 
 // Startup
 import Dashboard from "./page/Startup/Dashboard/Dashboard";
@@ -46,6 +47,7 @@ const App = () => {
 				<Route path="/foundraising" element={<FundraisingFlow />} />
 				<Route path="/startup-onboarding" element={<ApplicationFlow />} />
 				<Route path="/investor-onboarding" element={<InvestorOnboarding />} />
+				<Route path="/user-onboarding" element={<UserOnboarding />} />
 
 				<Route element={<Layout />}>
 					{/* startup */}

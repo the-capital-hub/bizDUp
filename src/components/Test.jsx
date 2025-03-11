@@ -13,6 +13,7 @@ const TestNavigation = () => {
 		{ value: "startup_manager", label: "Startup Manager" },
 		{ value: "investor_manager", label: "Investor Manager" },
 		{ value: "syndicate", label: "Syndicate" },
+		// { value: "admin", label: "Admin" },
 	];
 
 	// Special routes not in menus
@@ -33,7 +34,11 @@ const TestNavigation = () => {
 			href: "/investor-onboarding",
 			description: "Investor Registration",
 		},
-		// { title: "Test Page", href: "/", description: "This Testing Page" },
+		{
+			title: "User Onboarding Combined",
+			href: "/user-onboarding",
+			description: "Combined User Onboarding",
+		},
 	];
 
 	useEffect(() => {
