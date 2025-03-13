@@ -1,4 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-hot-toast";
+import { useLogoutMutation } from "../../app/api";
+import {
+	clearUser,
+	clearRole,
+	selectUser,
+} from "../../features/auth/authSlice";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -16,7 +25,31 @@ import Search from "../Search";
 import LogoutPopup from "../Popup/LogoutPopup";
 
 const Navbar = ({ isCollapsed, setIsCollapsed }) => {
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
+	const user = useSelector(selectUser);
+	// console.log(user);
+
 	const [showLogoutAlert, setShowLogoutAlert] = useState(false);
+
+	const [logout, { isLoading: isLoggingOut }] = useLogoutMutation();
+
+	const handleLogout = async () => {
+		try {
+			const response = await logout().unwrap();
+			if (response) {
+				dispatch(clearUser());
+				dispatch(clearRole());
+				toast.success(response.message);
+				navigate("/auth/login");
+			}
+		} catch (error) {
+			toast.error(error?.data?.message || "Failed to logout");
+		} finally {
+			setShowLogoutAlert(false);
+		}
+	};
+
 	return (
 		<>
 			<div className="flex-1">
@@ -56,16 +89,19 @@ const Navbar = ({ isCollapsed, setIsCollapsed }) => {
 										<div className="flex items-center justify-between gap-3  cursor-pointer">
 											<Button variant="ghost" className="relative h-12 w-12">
 												<Avatar className="h-12 w-12 rounded-none">
-													<AvatarImage src={Avtar} alt="Avatar" />
+													<AvatarImage
+														src={user?.profilePicUrl || Avtar}
+														alt="Avatar"
+													/>
 													<AvatarFallback>Meet Jain</AvatarFallback>
 												</Avatar>
 											</Button>
 											<div className="flex flex-col gap-3">
 												<p className="text-xs leading-none text-muted-foreground">
-													Meet Jain
+													{user?.fullName}
 												</p>
 												<p className="text-xs leading-none text-muted-foreground">
-													andywarhol@mail.com
+													{user?.email}
 												</p>
 											</div>
 										</div>
@@ -97,10 +133,10 @@ const Navbar = ({ isCollapsed, setIsCollapsed }) => {
 										</DropdownMenuItem>
 										{/* <DropdownMenuSeparator /> */}
 										<DropdownMenuItem
-											onClick={() => setShowLogoutAlert(true)}
+											onClick={handleLogout}
 											className="cursor-pointer hover:text-purple-600"
 										>
-											Log out
+											{isLoggingOut ? "Logging out..." : "Log out"}
 										</DropdownMenuItem>
 									</DropdownMenuContent>
 								</DropdownMenu>

@@ -1,3 +1,8 @@
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { toast } from "react-hot-toast";
+import { useLogoutMutation } from "../../app/api";
+import { clearUser, clearRole } from "../../features/auth/authSlice";
 import {
 	AlertDialog,
 	AlertDialogAction,
@@ -10,7 +15,26 @@ import {
 } from "@/components/ui/alert-dialog";
 import LogoutIcon from "../../Images/Logout.png";
 
-export default function LogoutPopup({ isOpen, onClose, onConfirm }) {
+export default function LogoutPopup({ isOpen, onClose }) {
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
+	const [logout, { isLoading: isLoggingOut }] = useLogoutMutation();
+	const handleLogout = async () => {
+		try {
+			const response = await logout().unwrap();
+			if (response) {
+				dispatch(clearUser());
+				dispatch(clearRole());
+				toast.success(response.message);
+				navigate("/auth/login");
+			}
+		} catch (error) {
+			toast.error(error?.data?.message || "Failed to logout");
+		} finally {
+			onClose();
+		}
+	};
+
 	return (
 		<AlertDialog open={isOpen} onOpenChange={onClose}>
 			<AlertDialogContent className="max-w-md">
@@ -32,9 +56,9 @@ export default function LogoutPopup({ isOpen, onClose, onConfirm }) {
 					</AlertDialogCancel>
 					<AlertDialogAction
 						className="flex-1 bg-red-500 text-white hover:bg-red-600"
-						onClick={onConfirm}
+						onClick={handleLogout}
 					>
-						Yes Logout
+						{isLoggingOut ? "Logging Out..." : "Yes Logout"}
 					</AlertDialogAction>
 				</AlertDialogFooter>
 			</AlertDialogContent>

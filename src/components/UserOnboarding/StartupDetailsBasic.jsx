@@ -181,7 +181,7 @@ export default function StartupBasicDetails({ onNext, onPrevious }) {
 							accept=".pdf,.doc,.docx,.ppt,.pptx"
 							onChange={handleDocumentChange}
 							className="hidden"
-							required
+							// required
 						/>
 					</div>
 					<p className="text-xs text-gray-500 mt-1">
