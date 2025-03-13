@@ -42,8 +42,9 @@ const App = () => {
 	return (
 		<Router>
 			<Routes>
-				<Route path="/" element={<Test />} />
-				<Route path="/auth" element={<AuthPage mode="signup" />} />
+				<Route path="/test" element={<Test />} />
+				<Route path="/" element={<AuthPage mode="signup" />} />
+				<Route path="/auth/login" element={<AuthPage mode="signin" />} />
 				<Route path="/foundraising" element={<FundraisingFlow />} />
 				<Route path="/startup-onboarding" element={<ApplicationFlow />} />
 				<Route path="/investor-onboarding" element={<InvestorOnboarding />} />

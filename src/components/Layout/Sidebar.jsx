@@ -98,10 +98,6 @@ const Sidebar = ({ isCollapsed }) => {
 			<LogoutPopup
 				isOpen={showLogoutAlert}
 				onClose={() => setShowLogoutAlert(false)}
-				onConfirm={() => {
-					// Handle logout
-					setShowLogoutAlert(false);
-				}}
 			/>
 		</>
 	);

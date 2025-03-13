@@ -54,6 +54,12 @@ export const api = createApi({
 				}
 			},
 		}),
+		logout: builder.mutation({
+			query: () => ({
+				url: "/auth/logout",
+				method: "POST",
+			}),
+		}),
 		register: builder.mutation({
 			query: (userData) => ({
 				url: "/auth/register",
@@ -81,4 +87,5 @@ export const {
 	useLoginMutation,
 	useRegisterMutation,
 	useGetCurrentUserQuery,
+	useLogoutMutation,
 } = api;

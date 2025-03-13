@@ -11,14 +11,14 @@ import {
 import { ArrowLeft } from "lucide-react";
 import Avatar from "../../Images/Avatar.png";
 
-export default function UserProfile({ onNext, onBack }) {
+export default function UserProfile({ onNext, onBack, email = "" }) {
 	const [profileImage, setProfileImage] = useState(null);
 	const [previewUrl, setPreviewUrl] = useState(Avatar);
 
 	const [formData, setFormData] = useState({
 		fullName: "",
-		mobileNumber: "",
-		email: "",
+		mobile: "",
+		email: email ? email : "",
 		linkedinUrl: "",
 		userRole: "",
 	});
@@ -109,9 +109,9 @@ export default function UserProfile({ onNext, onBack }) {
 					<label className="block text-sm font-medium">Mobile Number</label>
 					<Input
 						type="tel"
-						name="mobileNumber"
+						name="mobile"
 						placeholder="Enter Mobile Number"
-						value={formData.mobileNumber}
+						value={formData.mobile}
 						onChange={handleChange}
 						// required
 						className="rounded-md h-12"
@@ -125,6 +125,7 @@ export default function UserProfile({ onNext, onBack }) {
 						name="email"
 						placeholder="Enter Email"
 						value={formData.email}
+						// disabled={email !== "" ? true : false}
 						onChange={handleChange}
 						// required
 						className="rounded-md h-12"
